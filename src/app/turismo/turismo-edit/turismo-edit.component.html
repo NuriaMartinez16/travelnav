@@ -1,0 +1,130 @@
+<div class="card">
+    <div class="card-header">
+      {{pageTitle}}
+    </div>
+  
+    <div class="card-body">
+      <form novalidate
+            (ngSubmit)="saveTurismo()"
+            [formGroup]="turismoForm">
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="turismoNameId">Turismo Name</label>
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="turismoNombreId"
+                   type="text"
+                   placeholder="Nombre (required)"
+                   formControlName="nombre"
+                   name="nombre" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="videoId">Video</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                   id="videoId"
+                   type="text"
+                   placeholder="Video"
+                   formControlName="video"
+                   name="video" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="ubicacionId">Ubicación</label>
+  
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="ubicacionId"
+                      placeholder="Ubicación"
+                      formControlName="ubicacion"
+                      name="ubicacion"></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="titularId">Titular</label>
+  
+          <div class="col-md-8">
+            <textarea class="form-control"
+                      id="titularId"
+                      placeholder="Titular"
+                      formControlName="titular"
+                      name="titular"></textarea>
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="descripcionId">Descripcion</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                      id="descripcionId"
+                      placeholder="Descripción"
+                      formControlName="descripcion"
+                      name="descripcion" />
+          </div>
+        </div>
+
+  
+        <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="tipoId">Tipo</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                      id="tipoId"
+                      placeholder="Tipo"
+                      formControlName="tipo"
+                      name="tipo" />
+          </div>
+        </div>
+  
+      <div class="form-group row mb-2">
+          <label class="col-md-2 col-form-label"
+                 for="fotoId">Foto</label>
+  
+          <div class="col-md-8">
+            <input class="form-control"
+                      id="fotoId"
+                      placeholder="Foto"
+                      formControlName="foto"
+                      name="foto" />
+          </div>
+        </div>
+  
+        <div class="form-group row mb-2">
+          <div class="offset-md-2 col-md-4">
+            <button class="btn btn-primary mr-3"                    
+                    type="submit">
+              Save
+            </button>
+            <button class="btn btn-outline-secondary mr-3"                    
+                    type="button"
+                    title="Cancel your edits"
+                    [routerLink]="['']">
+              Cancel
+            </button>
+            <button class="btn btn-outline-warning"                  
+                    type="button"
+                    title="Delete this turismo"
+                    (click)="deleteTurismo()">
+              Delete
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  
+    <div class="alert alert-danger"
+         *ngIf="errorMessage">{{errorMessage}}
+    </div>
+  </div>

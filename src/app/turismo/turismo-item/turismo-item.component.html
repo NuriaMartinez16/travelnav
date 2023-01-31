@@ -1,0 +1,13 @@
+<figure class="figure">
+  <img src="{{turismo.foto}}" class="figure-img img-fluid rounded">
+  <figcaption class="figure-caption">
+    <h5>
+      <a [routerLink]="['/turismo', turismo.id]">
+        <p>{{turismo.nombre}}</p>
+      </a>
+
+      <span>{{turismo.titular }}</span>
+    </h5>
+    <p>{{turismo.descripcion}}</p>
+  </figcaption>
+</figure>
