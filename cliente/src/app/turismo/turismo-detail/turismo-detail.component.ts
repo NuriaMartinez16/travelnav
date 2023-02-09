@@ -20,6 +20,7 @@ export class TurismoDetailComponent implements OnInit {
     foto: '',
   };
   establecId = 0;
+  public isloading: Boolean = true;
 
   constructor(
     private activatedroute: ActivatedRoute,
@@ -33,7 +34,11 @@ export class TurismoDetailComponent implements OnInit {
     );
     this.establecService
       .getTurismoById(this.establecId)
-      .subscribe((data: Turismo) => (this.turismo = data));
+      .subscribe((data: any) => {
+        this.isloading = true;
+        this.turismo = data[0];
+        this.isloading = false;
+      });
   }
   goEdit(): void {
     this.router.navigate(['/turismo', this.establecId, 'edit']);

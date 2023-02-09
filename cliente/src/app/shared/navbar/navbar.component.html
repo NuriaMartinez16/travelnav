@@ -1,20 +1,53 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['']">
+    <img src="../../Imagenes/LogoTurismoEnCompañia.png" class="img-fluid">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"> </span>
+  </button>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" [routerLink]="['']">
-        <img src="/assets/images/brujula.jpg" class="img-fluid">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">     </span>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <h3><a class="nav-link " [routerLink]="['']">Vídeos turismo</a></h3>
+      </li>
+      <li class="nav-item my-auto">
+        <a class="nav-link " (click)="newTurismo()">New turismo</a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<nav class="navbar navbar-expand-sm navbar-light" id="neubar">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['']"><img src="" height="60" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">     
+
+    <div class=" collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <h3><a class="nav-link " [routerLink]="['']">Vídeos turismo</a></h3>
-        </li> 
-        <li class="nav-item my-auto">
-            <a class="nav-link " (click)="newTurismo()">New turismo</a>
+          <h3><a class="nav-link " [routerLink]="['']">Vídeos turismo</a></h3>
+        </li>
+      </ul>
+      <ul class="navbar-nav ms-auto ">
+        <li class="nav-item">
+          <a class="nav-link mx-2 active" (click)="newTurismo()">New turismo</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-2 dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Usuario
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Iniciar sesion</a></li>
+            <li><a class="dropdown-item" href="#">Suscribirse</a></li>
+          </ul>
         </li>
       </ul>
     </div>
-  </nav>
+  </div>
+</nav>
+<br><br><br>

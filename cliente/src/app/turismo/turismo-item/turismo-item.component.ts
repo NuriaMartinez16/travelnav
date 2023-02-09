@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Turismo } from 'src/app/shared/turismo';
 
 @Component({
@@ -6,7 +6,10 @@ import { Turismo } from 'src/app/shared/turismo';
   templateUrl: './turismo-item.component.html',
   styleUrls: ['./turismo-item.component.scss'],
 })
-export class TurismoItemComponent {
+export class TurismoItemComponent implements OnInit {
+  ngOnInit(): void {
+    
+  }
   @Input() turismo: Turismo = {
     id: 0,
     nombre: '',

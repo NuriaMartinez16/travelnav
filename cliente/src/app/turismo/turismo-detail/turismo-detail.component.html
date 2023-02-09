@@ -1,21 +1,24 @@
-<figure class="figure">
-  <img src="https://picsum.photos/820/300" class="figure-img img-fluid rounded">
-  <figcaption class="figure-caption">
-    <h4>Nombre: {{turismo.nombre}}</h4>
-    <h5>Ubicación: {{turismo.ubicacion}}</h5>
-    <h5>Titular: {{turismo.titular}}</h5>
-    <h5>Descripción: {{turismo.descripcion}}</h5>
-    <h5>tipo: {{turismo.tipo}}</h5>
-  </figcaption>
-</figure>
+<div *ngIf="!isloading" class="row mt-4">
+  <figure class="figure">
+    <img src="{{turismo.foto}}" class="figure-img img-fluid rounded">
+    <figcaption class="figure-caption">
+      <h4>Nombre: {{turismo.nombre}}</h4>
+      <h5>Fecha inicio: {{turismo.ubicacion}}</h5>
+      <h5>Fecha fin: {{turismo.titular}}</h5>
+      <h5>Duración: {{turismo.descripcion}}</h5>
+      <h5>tipo: {{turismo.tipo}}</h5>
+    </figcaption>
+  </figure>
 
-<div class="row mt-4">
-  <div class="col-md-4">
-    <button class="btn btn-outline-secondary mr-3" style="width:80px" (click)="onBack()">
-      <i class="fa fa-chevron-left"></i> Back
-    </button>
-    <button class="btn btn-outline-primary" style="width:80px" (click)="goEdit()">
-      Edit
-    </button>
+
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <button class="btn btn-outline-secondary mr-3" style="width:80px" (click)="onBack()">
+        <i class="fa fa-chevron-left"></i> Back
+      </button>
+      <button class="btn btn-outline-primary" style="width:80px" (click)="goEdit()">
+        Edit
+      </button>
+    </div>
   </div>
 </div>

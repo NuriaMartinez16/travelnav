@@ -19,4 +19,14 @@ export class NavbarComponent implements OnInit {
     this.turismoService.getMaxTurismoId().subscribe((data) => (this.id = data));
     this.router.navigate(['/turismo', this.id, 'new']);
   }
+  newUser() {
+    // Get max product Id from the product list
+    this.turismoService.getMaxTurismoId().subscribe((data) => (this.id = data));
+    this.router.navigate(['/turismo', this.id, 'new']);
+  }
+  logIn() {
+    // Get max product Id from the product list
+    this.turismoService.getMaxTurismoId().subscribe((data) => (this.id = data));
+    this.router.navigate(['/turismo', this.id, 'new']);
+  }
 }

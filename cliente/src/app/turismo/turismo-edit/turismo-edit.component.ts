@@ -26,6 +26,7 @@ export class TurismoEditComponent implements OnInit {
     tipo: [''],
     foto: '',
   };
+  public isloading: Boolean = true;
 
   constructor(
     private fb: FormBuilder,
@@ -52,16 +53,19 @@ export class TurismoEditComponent implements OnInit {
 
   getTurismo(id: number): void {
     this.turismoService.getTurismoById(id).subscribe(
-      (turismo: Turismo) => this.displayTurismo(turismo),
+      (turismo: Turismo) => {
+        this.isloading = true;
+        this.displayTurismo(turismo),
+        this.isloading = false;
       (error: any) => (this.errorMessage = <any>error)
-    );
+      });
   }
 
-  displayTurismo(turismo: Turismo): void {
+  displayTurismo(turismo: any): void {
     if (this.turismoForm) {
       this.turismoForm.reset();
     }
-    this.turismo = turismo;
+    this.turismo = turismo[0];
     this.pageTitle = `Edit turismo: ${this.turismo.nombre}`;
 
     // Update the data on the form

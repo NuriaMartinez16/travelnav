@@ -12,8 +12,8 @@ export class HomeComponent implements OnInit {
   constructor(private turismoService: TurismoService) {}
 
   ngOnInit() {
-    this.turismoService
-      .getTurismos()
-      .subscribe((data: Turismo[]) => (this.turismos = data));
+    this.turismoService.getTurismos().subscribe((data: Turismo[]) => {
+        this.turismos = data;
+      });
   }
 }

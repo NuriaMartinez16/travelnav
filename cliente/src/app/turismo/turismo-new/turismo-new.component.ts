@@ -55,10 +55,12 @@ export class TurismoNewComponent implements OnInit {
     if (this.turismoForm.valid) {
       if (this.turismoForm.dirty) {
         this.turismo = this.turismoForm.value;
-        this.turismo.id = this.prodId;
-
         this.turismoService.createTurismo(this.turismo).subscribe(
-          () => this.onSaveComplete(),
+          (data) => {
+            this.onSaveComplete();
+            this.turismo = data;
+            this.turismo.id = data.id + 1;
+          },
           (error: any) => (this.errorMessage = <any>error)
         );
       } else {

@@ -1,0 +1,26 @@
+#neubar {
+  background: #e1fad2;
+  box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.nav-item .active {
+  border-radius: 6px;
+  background: linear-gradient(145deg, #d9ffca, #c0f5b2);
+  box-shadow: 4px 4px 8px #b1dda0, -4px -4px 8px #d8f7cc;
+}
+#neubar .dropdown-menu a:hover {
+  color: #454545;
+}
+#neubar .nav-item {
+  margin: auto 4px;
+}
+#neubar a {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+#neubar .dropdown-menu {
+  background: #d9ffca;
+}
+a.navbar-brand {
+  color: #454545;
+}

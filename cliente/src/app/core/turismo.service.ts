@@ -10,14 +10,18 @@ import { Turismo } from '../shared/turismo';
   providedIn: 'root',
 })
 export class TurismoService {
-  private turismosUrl = 'api/turismos';
-  //private turismosUrl = 'http://localhost:8000/product';
+  //private turismosUrl = 'api/turismos';
+  private turismosUrl = 'http://localhost:8000/turismo';
+  private newTurismoUrl = 'http://localhost:8000/turismo/new';
 
   constructor(private http: HttpClient) {}
 
   getTurismos(): Observable<Turismo[]> {
-    return this.http.get<Turismo[]>(this.turismosUrl).pipe(
+    return this.http.get<any>(this.turismosUrl).pipe(
       tap((data) => console.log(JSON.stringify(data))),
+      map((data) => {
+        return data[0];
+      }),
       catchError(this.handleError)
     );
   }
@@ -39,8 +43,11 @@ export class TurismoService {
 
   getTurismoById(id: number): Observable<Turismo> {
     const url = `${this.turismosUrl}/${id}`;
-    return this.http.get<Turismo>(url).pipe(
+    return this.http.get<any>(url).pipe(
       tap((data) => console.log('getTurismo: ' + JSON.stringify(data))),
+      map((data) => {
+        return data[0];
+      }),
       catchError(this.handleError)
     );
   }
@@ -49,9 +56,12 @@ export class TurismoService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     product.id = 0;
     return this.http
-      .post<Turismo>(this.turismosUrl, product, { headers: headers })
+      .post<Turismo>(this.newTurismoUrl, product, { headers: headers })
       .pipe(
         tap((data) => console.log('createTurismo: ' + JSON.stringify(data))),
+        map((data) => {
+          return data;
+        }),
         catchError(this.handleError)
       );
   }
