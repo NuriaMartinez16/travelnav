@@ -11,8 +11,8 @@ import { Turismo } from '../shared/turismo';
 })
 export class TurismoService {
   //private turismosUrl = 'api/turismos';
-  private turismosUrl = 'http://localhost:8000/turismo';
-  private newTurismoUrl = 'http://localhost:8000/turismo/new';
+  private turismosUrl = 'https://localhost:8000/turismo';
+  private newTurismoUrl = 'https://localhost:8000/turismo/new';
 
   constructor(private http: HttpClient) {}
 
